@@ -9,49 +9,68 @@
 <h1 align="center">Vibe Coder's Dream</h1>
 
 <p align="center">
-  <strong>Ship fast. Stay type-safe. Zero friction.</strong>
+  <strong>The AI-Native Dev Platform That Ships While You Sleep</strong>
 </p>
 
-<p align="center">
-  The ultimate boilerplate for AI-assisted development with Claude Code.<br/>
-  Complete features in minutes, not hours.
-</p>
-
-<p align="center">
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-features">Features</a> •
-  <a href="#-ai-commands">AI Commands</a> •
-  <a href="#-documentation">Documentation</a> •
-  <a href="#-contributing">Contributing</a>
-</p>
+> [!IMPORTANT]
+> **Stop configuring. Start shipping.**
+> Most boilerplates give you code. This one gives you a workflow.
 
 ---
 
-## Why This Exists
+## The Problem: "The Setup Tax"
 
-Building modern web apps shouldn't be slow. But configuring auth, databases, real-time sync, and UI components takes forever.
+You have an idea. You want to build it.
 
-**Vibe Coder's Dream** gives you:
-- **Production-ready stack** configured and integrated
-- **AI agent orchestration** for Claude Code
-- **Reusable patterns** for common features
-- **One command** to go from idea to deployed feature
+But before you write a single line of unique logic, you spend 3 days:
+- Configuring Clerk authentication
+- Setting up a database schema
+- Wrestling with TypeScript errors
+- Glueing together UI components
 
-```bash
-# Instead of hours of setup...
-/vibe user can create and view blog posts
+By the time you're ready to build, the vibe is gone.
 
-# 8 minutes later: Working feature with real-time updates, auth, and beautiful UI
-```
+---
+
+## The Solution: Be The Architect, Not The Plumber
+
+**Vibe Coder's Dream** is an opinionated, self-healing development environment designed specifically for **Claude Code**.
+
+It's not just a template. It's a **force multiplier** that turns you from a "coder" into an "architect."
+
+### The Stack
+
+| Technology | Why We Use It |
+|------------|---------------|
+| **Next.js 14** | Server components, file routing, API routes |
+| **Clerk** | Auth in 5 minutes, user management included |
+| **Convex** | Real-time database, type-safe, serverless |
+| **shadcn/ui** | Beautiful components you own |
+| **Custom AI Agents** | That know how to use this stack |
+
+---
+
+## The Mechanism: Why It Works
+
+This isn't just a collection of files. It's a **System of Intelligence**.
+
+We've taught Claude how to use this stack. When you say "build a blog," Claude doesn't guess. It uses pre-defined **Skills** to:
+
+1. **Scaffold** the database schema (using Convex patterns)
+2. **Generate** the UI (using shadcn components)
+3. **Wire** the data (using real-time hooks)
+4. **Protect** the routes (using Clerk middleware)
+
+**The Result?** Features that used to take days now take minutes.
 
 ---
 
 ## Quick Start
 
-### Option 1: Setup Script (Recommended)
+### Option 1: Speed Run (Recommended)
 
 ```bash
-git clone https://github.com/your-username/vibe-coder-dream.git
+git clone https://github.com/RaapTechllc/vibe-coder-dream.git
 cd vibe-coder-dream
 bash setup.sh my-app
 ```
@@ -59,88 +78,67 @@ bash setup.sh my-app
 ### Option 2: Manual Setup
 
 ```bash
-# 1. Create Next.js app
-npx create-next-app@latest my-app --typescript --tailwind --eslint --app --src-dir
+# 1. Clone & Install
+git clone https://github.com/RaapTechllc/vibe-coder-dream.git
+cd vibe-coder-dream
+npm install
 
-# 2. Install dependencies
-cd my-app
-npm install @clerk/nextjs convex sonner lucide-react svix
-npx shadcn@latest init
-npx shadcn@latest add button input textarea label card skeleton dialog
+# 2. Add Secrets
+cp .env.example .env.local
+# Add your Clerk & Convex keys
 
-# 3. Copy configuration files from this repo
-# 4. Add your API keys to .env.local
+# 3. Launch (two terminals)
+npm run dev        # Terminal 1
+npx convex dev     # Terminal 2
 ```
 
-### After Setup
+---
+
+## AI Command Center
+
+Once you're running, you have a team of agents at your fingertips.
+
+| Command | What It Does | The Vibe |
+|:--------|:-------------|:---------|
+| `/vibe [feature]` | Builds a full-stack feature from scratch | "I need a blog system." |
+| `/fix [issue]` | Debugs and self-heals errors | "Why isn't auth working?" |
+| `/style [page]` | Polishes UI to look premium | "Make this look like Apple." |
+| `/ship` | Prepares for production deployment | "Let's go live." |
+
+### Real Example
 
 ```bash
-# Terminal 1: Start Next.js
-npm run dev
-
-# Terminal 2: Start Convex
-npx convex dev
-
-# Visit http://localhost:3000
+> /vibe Create a project dashboard where users can create 'spaces' and invite members.
 ```
 
----
+**Claude's Output:**
+- Schema: Created `spaces` table in Convex
+- UI: Created `dashboard/page.tsx` with shadcn cards
+- Data: Wired up `useQuery` for real-time updates
+- Feature: Added "Invite Member" dialog
 
-## Features
-
-### The Stack
-
-| Technology | Why We Use It |
-|------------|---------------|
-| **Next.js 14** | Server components, file routing, API routes |
-| **shadcn/ui** | Beautiful components you own |
-| **Clerk** | Auth in 5 minutes |
-| **Convex** | Real-time database with TypeScript |
-| **Tailwind CSS** | Utility-first styling |
-
-### What You Get
-
-- **Authentication** - Sign up, sign in, user management (Clerk)
-- **Database** - Real-time sync, type-safe queries (Convex)
-- **UI Components** - 20+ shadcn components pre-installed
-- **AI Orchestration** - 4 specialized agents for different tasks
-- **Code Patterns** - Production-tested patterns for common features
+**Time elapsed: 4 minutes.**
 
 ---
 
-## AI Commands
+## Agent Features (v2.1)
 
-Use these commands with Claude Code:
-
-| Command | What It Does |
+| Feature | What It Does |
 |---------|--------------|
-| `/vibe [feature]` | Build a complete feature fast |
-| `/fix [issue]` | Debug and fix bugs surgically |
-| `/style [component]` | Make components beautiful |
-| `/ship` | Deploy to production |
+| **Handoff Validation** | Agents validate context before starting |
+| **Conflict Detection** | Prevents file conflicts between parallel jobs |
+| **Self-Healing** | Errors improve the boilerplate for future projects |
+| **Timeout Policies** | Graceful degradation on long-running tasks |
+| **Retry Logic** | Automatic recovery from transient failures |
 
-### Example Usage
+---
 
-```bash
-# Build a blog
-/vibe blog with posts and comments
+## Why Founders Choose This
 
-# Fix authentication
-/fix user not redirecting after login
-
-# Style the dashboard
-/style dashboard cards
-
-# Deploy everything
-/ship
-```
-
-### Agent Features (v2.1)
-
-- **Handoff Validation** - Agents validate context before starting
-- **Conflict Detection** - Prevents file conflicts between parallel jobs
-- **Timeout Policies** - Graceful degradation on long-running tasks
-- **Retry Logic** - Automatic recovery from transient failures
+- **Zero Friction**: From `git clone` to `localhost:3000` in < 2 minutes
+- **Type Safety**: End-to-end type safety from DB to UI. No more `any`
+- **Self-Healing**: The `/fix` agent understands the stack and fixes its own bugs
+- **Production Ready**: This isn't a toy. It scales to millions of users on Vercel + Convex
 
 ---
 
@@ -155,50 +153,20 @@ my-app/
 │   │   └── layout.tsx       # Root layout
 │   ├── components/
 │   │   ├── ui/              # shadcn components
-│   │   ├── features/        # Feature components
-│   │   └── providers/       # Context providers
+│   │   └── features/        # Feature components
 │   └── lib/                 # Utilities
 ├── convex/
 │   ├── schema.ts            # Database schema
 │   ├── functions/           # Queries & mutations
 │   └── http.ts              # Webhooks
-├── .claude/                 # AI agent configs
-│   └── agents/              # Agent definitions
-└── skills/                  # Reusable patterns
+└── skills/                  # Reusable AI patterns
 ```
-
----
-
-## Documentation
-
-| Document | Description |
-|----------|-------------|
-| [CLAUDE.md](./CLAUDE.md) | Complete coding patterns and conventions |
-| [cloud.md](./cloud.md) | AI orchestration settings |
-| [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) | Common issues and fixes |
-| [CHANGELOG.md](./CHANGELOG.md) | Version history |
-
-### Skills Reference
-
-| Skill | Use Case |
-|-------|----------|
-| [convex-crud](./skills/convex-crud/) | Database operations |
-| [shadcn-forms](./skills/shadcn-forms/) | Form patterns |
-| [clerk-auth](./skills/clerk-auth/) | Authentication |
-| [realtime-sync](./skills/realtime-sync/) | Real-time features |
-
-### External Resources
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Convex Documentation](https://docs.convex.dev)
-- [Clerk Documentation](https://clerk.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
 
 ---
 
 ## Environment Variables
 
-Create `.env.local` with:
+Create `.env.local`:
 
 ```bash
 # Clerk (from https://dashboard.clerk.com)
@@ -209,8 +177,6 @@ CLERK_WEBHOOK_SECRET=whsec_...
 # Clerk URLs
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
 
 # Convex (auto-filled by npx convex dev)
 NEXT_PUBLIC_CONVEX_URL=
@@ -218,44 +184,29 @@ NEXT_PUBLIC_CONVEX_URL=
 
 ---
 
-## Setting Up Clerk Webhook
+## Documentation
 
-1. Go to [Clerk Dashboard](https://dashboard.clerk.com) → Webhooks
-2. Add endpoint: `https://your-convex.convex.site/clerk-webhook`
-3. Select events: `user.created`, `user.updated`, `user.deleted`
-4. Copy signing secret
-5. Add to Convex: `npx convex env set CLERK_WEBHOOK_SECRET whsec_...`
+| Document | Description |
+|----------|-------------|
+| [CLAUDE.md](./CLAUDE.md) | Coding patterns and conventions |
+| [cloud.md](./cloud.md) | AI orchestration + self-healing protocol |
+| [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) | Common issues and fixes |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | Contribution guidelines |
 
----
+### Skills Reference
 
-## Common Commands
-
-```bash
-# Development
-npm run dev              # Start Next.js
-npx convex dev           # Start Convex
-
-# Type checking
-npm run typecheck        # Check TypeScript
-npm run lint             # Run ESLint
-
-# Deployment
-npm run deploy           # Deploy Convex + Vercel
-npx convex deploy        # Deploy Convex only
-vercel --prod            # Deploy Vercel only
-```
+| Skill | Use Case |
+|-------|----------|
+| [convex-crud](./skills/convex-crud/) | Database operations |
+| [shadcn-forms](./skills/shadcn-forms/) | Form patterns |
+| [clerk-auth](./skills/clerk-auth/) | Authentication |
+| [realtime-sync](./skills/realtime-sync/) | Real-time features |
 
 ---
 
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
 
 ---
 
@@ -265,19 +216,13 @@ MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-## Acknowledgments
-
-Built with:
-- [Next.js](https://nextjs.org) by Vercel
-- [shadcn/ui](https://ui.shadcn.com) by shadcn
-- [Clerk](https://clerk.com) for authentication
-- [Convex](https://convex.dev) for the backend
-
----
+<p align="center">
+  <strong>Ready to dream?</strong><br/>
+  <sub>Stop configuring. Start shipping.</sub>
+</p>
 
 <p align="center">
-  <strong>Built for Vibe Coders</strong><br/>
-  <sub>Ship fast. Stay type-safe. Zero friction.</sub>
+  <a href="https://github.com/RaapTechllc/vibe-coder-dream">Clone the Repo</a> and start building.
 </p>
 
 <p align="center">
